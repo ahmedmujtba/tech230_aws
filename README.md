@@ -161,8 +161,8 @@ Difference between Capital Expenditure & Operating Expenditure:
 
 Cloud can be CapEx or OpEx depending on the types of investments and cloud environment. Cloud can be considered CapEx when large one-time purchases are made for fixed assets, like infrastructure for an on-premises data center. On the other hand, cloud can be OpEx when costs are tied to day-to-day operations, like a monthly cloud-based application subscription.
 
-- Cloud allows businesses to shit their IT expenses from CapEx to Opex by removing major upfront costs and replacing them with manageable, more consistent monthly or annual fees.
-- By offlocaind the headache of CapEx infrastructure investment and maintenance to third party providers, IT teams have extra time and budget to focus on activities that bring value to the business like building new products and investigating innovative solutions
+- Cloud allows businesses to shift their IT expenses from CapEx to Opex by removing major upfront costs and replacing them with manageable, more consistent monthly or annual fees.
+- By offloading the headache of CapEx infrastructure investment and maintenance to third party providers, IT teams have extra time and budget to focus on activities that bring value to the business like building new products and investigating innovative solutions
 
 ## Case studies on companies that have transferred to the cloud and what that has allows them to do? 1-3 recommended.
 
