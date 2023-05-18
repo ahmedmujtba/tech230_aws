@@ -60,12 +60,12 @@ This option should look like this:
 
 1. Run the following commands in this order:
 
-`sudo apt update -y`
-`sudo apt upgrade -y`
-`sudo apt install nginx -y`
-`sudo systemctl start nginx`
-`sudo systemctl enable nginx`
-`sudo systemctl status nginx`
+- `sudo apt update -y`
+- `sudo apt upgrade -y`
+- `sudo apt install nginx -y`
+- `sudo systemctl start nginx`
+- `sudo systemctl enable nginx`
+- `sudo systemctl status nginx`
 
 2. Change security group to add a new rule to allow HTTP/S in addition to SSH so we are able to access our nginx server using public IP.
 
@@ -174,3 +174,55 @@ In web browser, enter: `http://3.252.97.98:3000/`
 Deployed app looks like this:
 
 ![alt text](./assets/deployed-app.png)
+
+## Deploying the Sparta App with 2 EC2's
+
+1. Create a new EC2 for app following the same steps used for creating mongodb ec2 previously, you should now have two EC2's running, you can check this on your instance dashboard and it should look like this:
+
+![alt text](./assets/ec2-status.png)
+
+#### In Terminal
+
+2. Connect both db and app ec2's in bash so you have a SSH connection established.
+3. In your connected DB, run `sudo nano mongodb.conf` and change the `bindip` to `0.0.0.0`
+4. Now run the following commands to restart your mongodb connection and check to confirm it's active:
+
+- `sudo systemctl restart mongodb`
+- `sudo systemctl enable mongodb`
+- `sudo systemctl status mongodb`
+
+#### In DB EC2 - AWS
+
+5. We need to create a new inbound rule within security settings to access mongodb. To do this go to 'security' tab in your instance and click on the security group for this instance. It should look like this:
+
+![alt text](./assets/sec-group.png)
+
+6. After clicking on the security group as seen above, select 'Edit Inbound Rules' and following screen should load where you can add the rule as seen below:
+
+![alt text](./assets/mongo-inbound-rule.png)
+
+#### In App EC2 - Terminal
+
+7. Run `ls` to check your `app` folder is copied across properly. if not you'll need to run the follwing command again:
+
+- `scp -i "~/.ssh/tech230.pem" -r app  ubuntu@ec2-52-50-68-120.eu-west-1.compute.amazonaws.com:/home/ubuntu`
+
+8. Run the following commands:
+
+- `sudo nano .bashrc` and add the mongodb host with `export DB_HOST=mongodb://52.50.68.120:27017/posts`
+- `source .bashrc` to add the environment variable.
+- `printenv` to check db host is added correctly you should be able to see it in the output.
+- `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
+- `sudo apt-get install nodejs -y`
+- `npm install pm2 -g`
+- `node app.js`
+
+Your terminal should look like this:
+
+![alt text](./assets/app-ec2-listen.png)
+
+#### In App EC2 - AWS
+
+9. To view the 'posts' page, Copy `Public IPv4` address and add `:3000/posts` at the end in the web browser, page should look like this:
+
+![alt text](./assets/posts-deployed.png)
