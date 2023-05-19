@@ -15,18 +15,31 @@
 #!/bin/bash
 
 `sudo apt-get update -y`
+
 `sudo apt-get upgrade -y`
+
 `sudo apt-get install nginx -y`
+
 `sudo nano /etc/nginx/sites-available/default`
-`sed -i 's+try_files $uri $uri/ =404;+proxy_pass http://localhost:3000/posts;proxy_set_header Host $host;' app-provision.sh`
+
+`sed -i 's+try_files $uri $uri/ =404;+proxy_pass http://localhost:3000/;' app-provision.sh`
+
 `sudo nginx -t`
+
 `sudo systemctl restart nginx`
+
 `sudo apt-get install git -y`
+
 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
+
 `sudo apt-get install nodejs -y`
+
 `npm install pm2 -g`
+
 `cd app`
+
 `npm install`
+
 `npm start`
 
 4. Run the provison file using the command `./app-provision-sh`. If an error appears related to permissions, run `sudo chmod a+rwx /.app-provison.sh`
