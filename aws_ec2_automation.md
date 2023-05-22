@@ -29,10 +29,9 @@ You will need to have completed the following steps before we can start automati
 - `sudo apt-get install nginx -y` - to install nginx
 - `sudo sed -i 's+try_files $uri $uri/ =404;+proxy_pass http://localhost:3000/+;' /etc/nginx/sites-available/default` - To add proxy pass to default file within nginx.
 - `sudo nginx -t` - To verify there are no syntax errors
-
 - `sudo systemctl restart nginx` - To restart nginx
-
-`sudo apt-get install git -y`
+- `sudo systemctl `
+  `sudo apt-get install git -y`
 
 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
 
