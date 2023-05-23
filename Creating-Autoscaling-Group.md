@@ -73,3 +73,12 @@ You'll also need to create a target group in this section like below:
 ![alt text](./assets/add-tag.png)
 
 11. In the review section, make sure all the options are correct and click on `Create Auto Scaling Group` to create your ASG.
+
+## Running your load balancer
+
+1. Go to `Load Balancers` from the menu on the left hand side and select for the relevant load balancer based on how you've named it.
+2. Copy the highlighted part from `DNS name` as shown below and paste it in the web browser once your instances are up and runnning and all checks have passed:
+
+![alt text](./assets/lb.png) 3. Once you have pasted the DNS name and your load balancer is active alongside minimum number of instances running, you should see the following:
+
+![alt text](./assets/lb-app.png)
