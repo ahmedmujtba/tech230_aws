@@ -1,5 +1,7 @@
 # VPC's in AWS
 
+## What are VPC's
+
 In this file, we'll learn how to create a VPC (Virtual Private Cloud), Internet Gateway, Create a connection between the two, Public subnet and Route Tables.
 
 ## Creating a VPC
@@ -48,9 +50,15 @@ Now we need to connect our newly created VPC and Internet Gateway. To do this si
 
 ![alt text](./assets/rt-conf.png)
 
-public route table - select from left and create route table. route table settings
+## Connecting Subnet to a route table
 
-connect subnet to a route table - subnet associations - edit explicit subnet associations - select the relevant subnet from options shown (after you can confirm by checking your subnet has moved from unassociated to associated subnets)
+As seen in the picture above, there is a Subnet appearing in the `Explicit subnet associations` confirming that our route table is connected to a subnet. However, if that was not the case we would see it appear in the `Subnets without explicit asociations`. In this case, we would click on `Edit subnet associations` and add our subnet manually. A confirmation message should appear once it is added(after you can confirm by checking your subnet has moved from unassociated to associated subnets):
+
+![alt text](./assets/rt-st-connect.png)
+
+Each subnet in your VPC must be connected to a route table. A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed.
+
+## Connecting Internet Gateway to the Route Table
 
 now we need to connect internet gateway to the route table - within routes, select edit routes. select add route and choose the 1 with all 0's (it allows traffic from anywhere). In target select internet gateway. select the internet gateway that pops up. click save changes.
 
