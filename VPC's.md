@@ -75,10 +75,26 @@ This should look like below:
 
 ![alt text](./assets/add-routes.png)
 
-NOTE: route table is automatically setup for us for the db and app machine to connect
+NOTE: route table is automatically setup for us for the db and app machine to connect.
 
-go to instances ec2 - select launch instance and name tech230-ahmed-nginx-in-vpc / or you can also use an existing ec2
+## Launching an EC2 instance within VPC
 
-In netwrok setting when creating ec2, sleect existing securtiy group. change austo-assign public IP to ENABLE. click edit in network settings and select a vpc you just created. `existng security grups will not work with new vpc`. clcik create new security group, give description, select add security group rules for http, ssh and custom(3000).
+- Go to instances ec2 - select `launch instance` and name it `tech230-ahmed-nginx-in-vpc` / or you can also use an existing ec2
 
-in advanced details,go to user data, paste nginx commands
+- In networsk setting when creating ec2, select `existing securtiy group`.
+- Change austo-assign public IP to `ENABLE`.
+
+![alt text](./assets/enable.png)
+
+- Click `edit` in `network settings` and select a vpc you just created.
+- Now we need to create new security group as exiting securty groups will not work with new VPC.
+- Add description and select `add security group rules` for http, ssh and custom(3000). This shoudl look like below:
+
+![alt text](/assets/sec-group-vpc.png)
+
+In advanced details, scroll to user data and add following nginx commands:
+
+- `sudo apt-get update -y`
+- `sudo apt-get upgrade -y`
+- `sudo apt-get install nginx -y`
+- `sudo systemctl start nginx`
