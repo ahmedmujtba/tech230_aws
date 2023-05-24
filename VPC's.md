@@ -64,9 +64,18 @@ Each subnet in your VPC must be connected to a route table. A route table contai
 
 ## Connecting Internet Gateway to the Route Table
 
-now we need to connect internet gateway to the route table - within routes, select edit routes. select add route and choose the 1 with all 0's (it allows traffic from anywhere). In target select internet gateway. select the internet gateway that pops up. click save changes.
+Now we need to connect internet gateway to the route table:
 
-route table is automatically setup for us for the db and app machine to connect
+- In `routes`, select `edit routes`.
+- Select `add route` and choose the 1 with all 0's (it allows traffic from anywhere).
+- In `target` select `internet gateway` and select the internet gateway that pops up.
+- click `save changes` to save your changes.
+
+This should look like below:
+
+![alt text](./assets/add-routes.png)
+
+NOTE: route table is automatically setup for us for the db and app machine to connect
 
 go to instances ec2 - select launch instance and name tech230-ahmed-nginx-in-vpc / or you can also use an existing ec2
 
