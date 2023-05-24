@@ -2,6 +2,10 @@
 
 ## What are VPC's
 
+An Amazon VPC is an isolated portion of the AWS cloud. You use Amazon VPC to create a virtual network
+topology for your Amazon EC2 resources.
+You have complete control over your virtual networking environment, including selection of your own IP address range,creation of subnets, and configuration of route tables and network gateways.
+
 In this file, we'll learn how to create a VPC (Virtual Private Cloud), Internet Gateway, Create a connection between the two, Public subnet and Route Tables.
 
 ## Creating a VPC
