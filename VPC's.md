@@ -88,7 +88,7 @@ NOTE: route table is automatically setup for us for the db and app machine to co
 
 - Click `edit` in `network settings` and select a vpc you just created.
 - Now we need to create new security group as exiting securty groups will not work with new VPC.
-- Add description and select `add security group rules` for http, ssh and custom(3000). This shoudl look like below:
+- Add description and select `add security group rules` for http, ssh and custom(3000). This should look like below:
 
 ![alt text](/assets/sec-group-vpc.png)
 
