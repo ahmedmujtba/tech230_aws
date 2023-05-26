@@ -48,4 +48,4 @@ To set up a CPU utilization alarm for EC2 instances, we can follow the steps as 
 
 ![alt text](./assets/new-topic.png)
 
-7. Name your alarm in the `Name and description` section, proceed to preview and then click `Create Alarm`
+7. Name your alarm in the `Name and description` section, proceed to preview and then click `Create Alarm`.
